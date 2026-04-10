@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+
+  pre_build:
+    commands:
+      - echo "=== Installing backend dependencies ==="
+      - cd backend && npm install && cd ..
+      - echo "=== Installing frontend dependencies ==="
+      - cd frontend && npm install && cd ..
+
+  build:
+    commands:
+      - echo "=== Running backend tests (Jest + Supertest) ==="
+      - cd backend && npm test && cd ..
+      - echo "=== Running frontend tests (Jest + RTL) ==="
+      - cd frontend && npm test && cd ..
+      - echo "=== All tests passed! Build successful ==="
+
+artifacts:
+  files:
+    - '**/*'
