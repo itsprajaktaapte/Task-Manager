@@ -31,7 +31,7 @@ describe('Task Manager UI', () => {
 
   test('renders app heading', async () => {
     render(<App />);
-    expect(screen.getByText(/Version 2.0/i)).toBeInTheDocument();
+    expect(screen.getByText(/Task Management App/i)).toBeInTheDocument();
   });
 
   test('shows tasks loaded from backend', async () => {
