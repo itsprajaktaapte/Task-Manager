@@ -5,9 +5,8 @@ describe('Task API', () => {
 
   test('GET /tasks returns task list', async () => {
     const res = await request(app).get('/tasks');
-    //expect(res.statusCode).toBe(200);
-    expect(res.statusCode).toBe(999);
-    expect(Array.isArray(res.body)).toBe(true);
+    expect(res.statusCode).toBe(200);
+       expect(Array.isArray(res.body)).toBe(true);
   });
 
   test('POST /tasks creates a task', async () => {
